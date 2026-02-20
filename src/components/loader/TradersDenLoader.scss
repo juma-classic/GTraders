@@ -11,7 +11,9 @@
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
     will-change: opacity, transform;
     overflow: hidden;
 
@@ -41,10 +43,12 @@
 }
 
 @keyframes particle-float {
-    0%, 100% {
+    0%,
+    100% {
         opacity: 0;
         transform: translateY(0) scale(0.5);
     }
+
     50% {
         opacity: 0.8;
         transform: translateY(-100px) scale(1);
@@ -91,7 +95,7 @@
     top: 50%;
     margin-left: -4px;
     margin-top: -10px;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 10px rgb(37 99 235 / 50%);
 }
 
 // Middle Gear Ring
@@ -112,9 +116,9 @@
     top: 50%;
     margin-left: -6px;
     margin-top: -15px;
-    box-shadow: 
-        0 0 15px rgba(59, 130, 246, 0.6),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 0 15px rgb(59 130 246 / 60%),
+        inset 0 2px 4px rgb(255 255 255 / 20%);
 }
 
 // Star of David
@@ -147,9 +151,9 @@
     left: 50%;
     top: 50%;
     transform-origin: center;
-    box-shadow: 
-        0 0 20px rgba(59, 130, 246, 0.8),
-        inset 0 2px 6px rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 0 20px rgb(59 130 246 / 80%),
+        inset 0 2px 6px rgb(255 255 255 / 30%);
 }
 
 .triangle-up .side-1 {
@@ -186,9 +190,9 @@
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, #1e3a8a, #0f172a);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    box-shadow: 
-        0 0 30px rgba(30, 58, 138, 0.8),
-        inset 0 0 20px rgba(59, 130, 246, 0.3);
+    box-shadow:
+        0 0 30px rgb(30 58 138 / 80%),
+        inset 0 0 20px rgb(59 130 246 / 30%);
     animation: rotate-clockwise 8s linear infinite;
 }
 
@@ -208,7 +212,7 @@
     top: 50%;
     margin-left: -3px;
     margin-top: -6px;
-    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+    box-shadow: 0 0 8px rgb(96 165 250 / 60%);
 }
 
 // Inner Rotating Core
@@ -228,9 +232,9 @@
     height: 100%;
     border: 3px solid #2563eb;
     border-radius: 50%;
-    box-shadow: 
-        0 0 20px rgba(37, 99, 235, 0.8),
-        inset 0 0 15px rgba(37, 99, 235, 0.5);
+    box-shadow:
+        0 0 20px rgb(37 99 235 / 80%),
+        inset 0 0 15px rgb(37 99 235 / 50%);
 }
 
 .core-center {
@@ -246,7 +250,7 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.9);
+    box-shadow: 0 0 15px rgb(37 99 235 / 90%);
 }
 
 // Orbiting Elements
@@ -266,7 +270,7 @@
     top: 50%;
     margin-left: -4px;
     margin-top: -4px;
-    box-shadow: 0 0 12px rgba(96, 165, 250, 0.9);
+    box-shadow: 0 0 12px rgb(96 165 250 / 90%);
     animation: orbit 4s linear infinite;
 }
 
@@ -274,6 +278,7 @@
     0% {
         transform: rotate(0deg) translateX(160px) rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg) translateX(160px) rotate(-360deg);
     }
@@ -284,6 +289,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -293,17 +299,20 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(-360deg);
     }
 }
 
 @keyframes pulse-glow {
-    0%, 100% {
-        filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px rgb(59 130 246 / 50%));
     }
+
     50% {
-        filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.9));
+        filter: drop-shadow(0 0 25px rgb(59 130 246 / 90%));
     }
 }
 
@@ -323,21 +332,21 @@
     gap: 0.25rem;
     line-height: 1.2;
 
-    .logo-mozaic {
+    .logo-gtraders {
         color: #60a5fa;
-        text-shadow: 0 0 20px rgba(96, 165, 250, 0.8);
+        text-shadow: 0 0 20px rgb(96 165 250 / 80%);
     }
 
     .logo-trading {
         color: #3b82f6;
         font-size: 1.8rem;
-        text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        text-shadow: 0 0 15px rgb(59 130 246 / 60%);
     }
 
     .logo-hub {
         color: #2563eb;
         font-size: 1.8rem;
-        text-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+        text-shadow: 0 0 15px rgb(37 99 235 / 60%);
     }
 }
 
@@ -366,9 +375,9 @@
     border-radius: 9999px;
     height: 12px;
     overflow: visible;
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(30, 58, 138, 0.3);
+    box-shadow:
+        inset 0 2px 4px rgb(0 0 0 / 50%),
+        0 0 10px rgb(30 58 138 / 30%);
 }
 
 .progress-bar-fill {
@@ -376,26 +385,21 @@
     background: linear-gradient(90deg, #1e3a8a, #2563eb, #3b82f6);
     border-radius: 9999px;
     transition: width 0.1s linear;
-    box-shadow: 
-        0 0 20px rgba(37, 99, 235, 0.8),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 0 20px rgb(37 99 235 / 80%),
+        inset 0 2px 4px rgb(255 255 255 / 30%);
     will-change: width;
     position: relative;
     overflow: hidden;
 
-    &::after {
+    &:after {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-        );
+        background: linear-gradient(90deg, transparent, rgb(255 255 255 / 30%), transparent);
         animation: shimmer 2s infinite;
     }
 }
@@ -404,6 +408,7 @@
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -417,7 +422,7 @@
     height: 20px;
     background: #60a5fa;
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(96, 165, 250, 1);
+    box-shadow: 0 0 30px rgb(96 165 250 / 100%);
     transition: left 0.1s linear;
     pointer-events: none;
 }
@@ -439,11 +444,11 @@
     font-weight: 700;
     color: #3b82f6;
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    text-shadow: 0 0 15px rgb(59 130 246 / 80%);
 }
 
 // Responsive adjustments
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .mechanical-sun-container {
         width: 280px;
         height: 280px;
@@ -481,7 +486,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
     .loading-container {
         padding: 1rem;
         gap: 2rem;

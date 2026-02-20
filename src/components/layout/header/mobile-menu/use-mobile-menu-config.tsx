@@ -43,7 +43,7 @@ const useMobileMenuConfig = (client?: RootStore['client']) => {
             {
                 as: 'a',
                 href: 'https://mozaictradinghub.com',
-                label: localize('MOZAIC TRADING HUB'),
+                label: localize('GTraders Pro'),
                 LeftComponent: BrandDerivLogoCoralIcon,
             },
             {
@@ -60,9 +60,7 @@ const useMobileMenuConfig = (client?: RootStore['client']) => {
                 target: '_blank',
             },
         ],
-        (
-            [] as TMenuConfig
-        ).filter(Boolean),
+        ([] as TMenuConfig).filter(Boolean),
         client?.is_logged_in
             ? [
                   {

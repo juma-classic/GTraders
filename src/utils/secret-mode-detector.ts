@@ -1,9 +1,9 @@
 /**
  * Secret Mode Detector
  * Detects secret gestures and keyboard patterns to toggle fake/real mode
- * 
+ *
  * Mobile: Swipe right 4 times, then left 2 times
- * Desktop: Type "mozaic" then press Enter twice
+ * Desktop: Type "gtraders" then press Enter twice
  */
 
 class SecretModeDetector {
@@ -14,7 +14,7 @@ class SecretModeDetector {
     private lastKeyTime = 0;
     private readonly SWIPE_TIMEOUT = 3000; // 3 seconds
     private readonly KEY_TIMEOUT = 2000; // 2 seconds
-    private readonly TARGET_SEQUENCE = 'mozaic';
+    private readonly TARGET_SEQUENCE = 'gtraders';
     private touchStartX = 0;
     private touchStartY = 0;
 
@@ -39,21 +39,21 @@ class SecretModeDetector {
     private handleTouchEnd(e: TouchEvent) {
         const touchEndX = e.changedTouches[0].clientX;
         const touchEndY = e.changedTouches[0].clientY;
-        
+
         const deltaX = touchEndX - this.touchStartX;
         const deltaY = touchEndY - this.touchStartY;
-        
+
         // Check if it's a horizontal swipe (not vertical)
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
             const currentTime = Date.now();
-            
+
             // Reset if timeout exceeded
             if (currentTime - this.lastSwipeTime > this.SWIPE_TIMEOUT) {
                 this.resetSwipes();
             }
-            
+
             this.lastSwipeTime = currentTime;
-            
+
             if (deltaX > 0) {
                 // Swipe right
                 this.handleSwipeRight();
@@ -69,7 +69,7 @@ class SecretModeDetector {
         if (this.swipeCount.left === 0) {
             this.swipeCount.right++;
             console.log(`👉 Swipe right: ${this.swipeCount.right}/4`);
-            
+
             if (this.swipeCount.right === 4) {
                 console.log('✅ Right swipes complete! Now swipe left 2 times...');
             }
@@ -85,7 +85,7 @@ class SecretModeDetector {
         if (this.swipeCount.right === 4) {
             this.swipeCount.left++;
             console.log(`👈 Swipe left: ${this.swipeCount.left}/2`);
-            
+
             if (this.swipeCount.left === 2) {
                 console.log('🎉 Secret gesture detected!');
                 this.activateFakeRealMode();
@@ -104,23 +104,23 @@ class SecretModeDetector {
 
     private handleKeyDown(e: KeyboardEvent) {
         const currentTime = Date.now();
-        
+
         // Reset if timeout exceeded
         if (currentTime - this.lastKeyTime > this.KEY_TIMEOUT) {
             this.keySequence = [];
             this.enterPressCount = 0;
         }
-        
+
         this.lastKeyTime = currentTime;
-        
+
         if (e.key === 'Enter') {
             // Check if we've typed the correct sequence
             const typedSequence = this.keySequence.join('').toLowerCase();
-            
+
             if (typedSequence === this.TARGET_SEQUENCE) {
                 this.enterPressCount++;
                 console.log(`⏎ Enter pressed: ${this.enterPressCount}/2`);
-                
+
                 if (this.enterPressCount === 2) {
                     console.log('🎉 Secret keyboard sequence detected!');
                     this.activateFakeRealMode();
@@ -135,35 +135,35 @@ class SecretModeDetector {
         } else if (e.key.length === 1 && /[a-z]/i.test(e.key)) {
             // Only add letter keys
             this.keySequence.push(e.key.toLowerCase());
-            
-            // Keep only the last 6 characters (length of "mozaic")
+
+            // Keep only the last 8 characters (length of "gtraders")
             if (this.keySequence.length > this.TARGET_SEQUENCE.length) {
                 this.keySequence.shift();
             }
-            
+
             const currentSequence = this.keySequence.join('');
             if (currentSequence === this.TARGET_SEQUENCE) {
-                console.log('✅ Sequence "mozaic" typed! Press Enter twice...');
+                console.log('✅ Sequence "gtraders" typed! Press Enter twice...');
             }
         }
     }
 
     private activateFakeRealMode() {
         const currentMode = localStorage.getItem('demo_icon_us_flag') === 'true';
-        
+
         if (!currentMode) {
             // Enable fake real mode
             localStorage.setItem('demo_icon_us_flag', 'true');
             localStorage.setItem('fake_real_mode_acknowledged', 'true');
             console.log('✅ Fake Real Mode ENABLED');
-            
+
             // Reload to apply changes
             window.location.reload();
         } else {
             // Disable fake real mode
             localStorage.setItem('demo_icon_us_flag', 'false');
             console.log('✅ Fake Real Mode DISABLED');
-            
+
             // Reload to apply changes
             window.location.reload();
         }

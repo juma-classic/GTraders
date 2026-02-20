@@ -15,10 +15,8 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
         'Initializing Quantum Core...',
         'Synchronizing Market Algorithms...',
         'Calibrating Trading Mechanisms...',
-        'Access Granted. Welcome to MOZAIC TRADING HUB.',
+        'Access Granted. Welcome to GTraders Pro.',
     ];
-
-
 
     // Progress and Status Updates - Optimized for faster loading
     useEffect(() => {
@@ -63,12 +61,16 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
             {/* Particle Background */}
             <div className='particle-background'>
                 {[...Array(30)].map((_, i) => (
-                    <div key={i} className='particle' style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        animationDelay: `${Math.random() * 3}s`,
-                        animationDuration: `${3 + Math.random() * 4}s`
-                    }}></div>
+                    <div
+                        key={i}
+                        className='particle'
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 3}s`,
+                            animationDuration: `${3 + Math.random() * 4}s`,
+                        }}
+                    ></div>
                 ))}
             </div>
 
@@ -78,18 +80,26 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
                     {/* Outer rotating ring with notches */}
                     <div className='outer-ring'>
                         {[...Array(12)].map((_, i) => (
-                            <div key={i} className='ring-notch' style={{
-                                transform: `rotate(${i * 30}deg) translateY(-140px)`
-                            }}></div>
+                            <div
+                                key={i}
+                                className='ring-notch'
+                                style={{
+                                    transform: `rotate(${i * 30}deg) translateY(-140px)`,
+                                }}
+                            ></div>
                         ))}
                     </div>
 
                     {/* Middle gear ring */}
                     <div className='middle-gear'>
                         {[...Array(8)].map((_, i) => (
-                            <div key={i} className='gear-tooth' style={{
-                                transform: `rotate(${i * 45}deg) translateY(-110px)`
-                            }}></div>
+                            <div
+                                key={i}
+                                className='gear-tooth'
+                                style={{
+                                    transform: `rotate(${i * 45}deg) translateY(-110px)`,
+                                }}
+                            ></div>
                         ))}
                     </div>
 
@@ -101,7 +111,7 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
                             <div className='triangle-side side-2'></div>
                             <div className='triangle-side side-3'></div>
                         </div>
-                        
+
                         {/* Downward triangle */}
                         <div className='triangle triangle-down'>
                             <div className='triangle-side side-1'></div>
@@ -113,9 +123,13 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
                         <div className='center-hexagon'>
                             <div className='hexagon-inner'>
                                 {[...Array(6)].map((_, i) => (
-                                    <div key={i} className='hex-gear' style={{
-                                        transform: `rotate(${i * 60}deg) translateY(-25px)`
-                                    }}></div>
+                                    <div
+                                        key={i}
+                                        className='hex-gear'
+                                        style={{
+                                            transform: `rotate(${i * 60}deg) translateY(-25px)`,
+                                        }}
+                                    ></div>
                                 ))}
                             </div>
                         </div>
@@ -125,18 +139,25 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
                     <div className='inner-core'>
                         <div className='core-ring'></div>
                         <div className='core-center'>
-                            <div className='progress-circle' style={{
-                                background: `conic-gradient(#2563eb ${progress * 3.6}deg, transparent ${progress * 3.6}deg)`
-                            }}></div>
+                            <div
+                                className='progress-circle'
+                                style={{
+                                    background: `conic-gradient(#2563eb ${progress * 3.6}deg, transparent ${progress * 3.6}deg)`,
+                                }}
+                            ></div>
                         </div>
                     </div>
 
                     {/* Orbiting elements */}
                     <div className='orbit-container'>
                         {[...Array(3)].map((_, i) => (
-                            <div key={i} className='orbit-element' style={{
-                                animationDelay: `${i * 0.8}s`
-                            }}></div>
+                            <div
+                                key={i}
+                                className='orbit-element'
+                                style={{
+                                    animationDelay: `${i * 0.8}s`,
+                                }}
+                            ></div>
                         ))}
                     </div>
                 </div>
@@ -144,9 +165,9 @@ export const TradersDenLoader: React.FC<TradersDenLoaderProps> = ({ onLoadComple
                 {/* App Logo/Name */}
                 <div className='logo-section'>
                     <h1 className='logo-title'>
-                        <span className='logo-mozaic'>MOZAIC</span>
-                        <span className='logo-trading'>TRADING</span>
-                        <span className='logo-hub'>HUB</span>
+                        <span className='logo-gtraders'>GTraders</span>
+                        <span className='logo-trading'>Pro</span>
+                        <span className='logo-hub'></span>
                     </h1>
                     <p className='logo-subtitle'>Quantum Trading Mechanics</p>
                 </div>
