@@ -73,7 +73,7 @@ export const getAppId = () => {
 
     if (!app_id || app_id === '115423') {
         console.warn('⚠️ App ID is invalid, forcing correct App ID...');
-        app_id = '115423';
+        app_id = '121055';
         window.localStorage.setItem('config.app_id', app_id);
     }
 
